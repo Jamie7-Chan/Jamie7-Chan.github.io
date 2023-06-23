@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>我的网站</title>
+        <style>
+                /* 导航栏样式 */
+                nav {
+                        background-color: #000; /* 黑色 */
+                        color: #fff; /* 白色字体 */
+                        padding: 10px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                }
+
+                nav img {
+                        height: 50px;
+                        width: auto;
+                }
+
+                nav ul {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                }
+
+                nav ul li {
+                        margin: 0 10px;
+                }
+
+                nav ul li a {
+                        color: #fff;
+                        text-decoration: none;
+                        font-weight: bold;
+                        padding: 5px;
+                        border-radius: 5px;
+                }
+
+                nav ul li a.nsfw {
+                        color: red;
+                        font-weight: bold;
+                }
+
+                /* 英雄区域样式 */
+                .hero {
+                        background-image: url('hero.jpg');
+                        background-size: cover;
+                        background-position: center;
+                        position: relative;
+                        height: 500px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                }
+
+                .hero::before {
+                        content: "";
+                        background-color: rgba(0, 0, 0, 0.5); /* 黑色半透明 */
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                }
+
+                .hero h1 {
+                        color: #fff;
+                        font-size: 48px;
+                        text-align: center;
+                        margin-bottom: 20px;
+                }
+
+                .hero p {
+                        color: #fff;
+                        text-align: center;
+                        font-size: 24px;
+                        max-width: 600px;
+                        line-height: 1.5;
+                }
+
+                /* 个人主页样式 */
+                .container {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        padding: 50px;
+                        background-color: #f5f5f5; /* 浅灰色 */
+                }
+
+                .work-display, .interactive-section, .basic-information {
+                        flex-basis: 30%;
+                        margin-bottom: 50px;
+                        background-color: #fff; /* 白色 */
+                        padding: 20px;
+                        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* 阴影 */
+                        border-radius: 5px;
+                }
+
+                .basic-information img {
+                        display: block;
+                        margin: 0 auto 20px;
+                        border-radius: 50%;
+                        width: 200px;
+                        height: 200px;
+                        object-fit: cover;
+                }
+
+                .basic-information h1 {
+                        font-size: 36px;
+                        text-align: center;
+                        margin-bottom: 10px;
+                }
+
+                .basic-information h2 {
+                        font-size: 24px;
+                        margin-bottom: 10px;
+                }
+
+                .basic-information p {
+                        font-size: 18px;
+                        line-height: 1.5;
+                        margin-bottom: 20px;
+                }
+
+                .basic-information ul {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                }
+
+                .basic-information li {
+                        margin: 0 10px;
+                }
+
+                .interactive-section img {
+                        display: block;
+                        margin: 0 auto;
+                        max-width: 100%;
+                }
+
+                .interactive-section h2 {
+                        font-size: 24px;
+                        margin-bottom: 10px;
+                }
+
+                .interactive-section p {
+                        font-size: 18px;
+                        line-height: 1.5;
+                        margin-bottom: 20px;
+                }
+
+                .work-display h2 {
+                        font-size: 24px;
+                        margin-bottom: 10px;
+                }
+
+                .work-display p {
+                        font-size: 18px;
+                        line-height: 1.5;
+                        margin-bottom: 20px;
+                }
+        </style>
+</head>
+<body>
+        <nav>
+  <img src="https://media2.giphy.com/media/gOih92mhiKQvF8Bqly/200.webp?cid=ecf05e47tqsdwjae0yk2wjd9vh4csh2g3kw01jm8e3hvuxn8&ep=v1_gifs_search&rid=200.webp&ct=g" alt="logo">
+  <ul>
+    <li><a href="https://popeyemagazine.jp/en/">🏂冒险</a></li>
+    <li><a href="https://book.douban.com/">📚读书会</a></li>
+    <li><a href="https://timwendelboe.no/">☕咖啡馆</a></li>
+    <li><a href="https://zh.wikipedia.org/wiki/NSFW" class="nsfw">NSFW</a></li>
+    <li><a href="#">📬Ask Me Anything</a></li>
+  </ul>
+</nav>
+  
+        <div class="hero">
+                <h1>欢迎来到我的网站</h1>
+                <p>这里展示了我最新的社群活动和年度报告，希望你能在这里找到你喜欢的内容。</p>
+        </div>
+        <div class="container">
+                <div class="basic-information">
+                        <img src="https://media0.giphy.com/media/xT8qB7GQDfnldWTFhS/200w.webp?cid=ecf05e47yltvhybbc6ifml5jfeq4uf060hquwiq5ffyv2vln&ep=v1_gifs_search&rid=200w.webp&ct=g=alt="头像">
+                        <h1>Suzie</h1>
+                        <h2>新领域的探险家</h2>
+                        <p>-英美剧漫游者</p>
+                  -肯尼亚重度患者</p> -带着海绵宝宝和张起灵一起去盗墓的中二工科生</p>
+                        <ul>
+                                <li><a href="https://discord.com/channels/969157902155776011/969157902155776013">Discord</a></li>
+                                <li><a href="#">Instagram</a></li>
+                                <li><a href="https://twitter.com/CameronBeiber">Twitter</a></li>
+                        </ul>
+                </div>
+                <div class="work-display">
+                        <h2></h2>
+                        <p>这里展示了我的最新作品，包括网页设计和移动</p>
+                </div>
+                <div class="interactive-section">
+                        <h2>🏳️‍🌈LGBT</h2>
+                        <p>-这里展示了有趣的le社群以及我参与过的lgbt活动</p>
+                        <img src="https://images.unsplash.com/photo-1561982479-c36896dad276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bGVzYmlhbiUyMGdpcmx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" alt="LGBT">
+                </div>
+        </div>
+</body>
+</html>
