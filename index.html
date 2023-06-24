@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+          <!DOCTYPE html>
 <html>
 <head>
         <title>我的网站</title>
@@ -57,7 +58,7 @@
 
                 .hero::before {
                         content: "";
-                        background-color: rgba(0, 0, 0, 0.5); /* 黑色半透明 */
+                        background-color: transparent; /* 将背景设置为透明 */
                         position: absolute;
                         top: 0;
                         right: 0;
@@ -89,7 +90,7 @@
                         max-width: 1200px;
                         margin: 0 auto;
                         padding: 50px;
-                        background-color: #f5f5f5; /* 浅灰色 */
+                        background-color: transparfent; /* 将背景设置为透明 */
                 }
 
                 .work-display, .interactive-section, .basic-information {
@@ -177,13 +178,21 @@
     <li><a href="https://book.douban.com/">📚读书会</a></li>
     <li><a href="https://timwendelboe.no/">☕咖啡馆</a></li>
     <li><a href="https://zh.wikipedia.org/wiki/NSFW" class="nsfw">NSFW</a></li>
-    <li><a href="#">📬Ask Me Anything</a></li>
+    
+  
+    <li><select onchange="window.location.href=this.value;">
+      <option value="#">📬Ask Me Anything</option>
+      <option value="https://www.douban.com/">DouBan</option>
+      <option value="https://www.youtube.com/">YouTube</option>
+      <option value="https://www.facebook.com/">Facebook</option>
+  
+    </select></li>
   </ul>
 </nav>
-  
-        <div class="hero">
-                <h1>欢迎来到我的网站</h1>
-                <p>这里展示了我最新的社群活动和年度报告，希望你能在这里找到你喜欢的内容。</p>
+      
+    
+          
+          
         </div>
         <div class="container">
                 <div class="basic-information">
@@ -192,21 +201,104 @@
                         <h2>新领域的探险家</h2>
                         <p>-英美剧漫游者</p>
                   -肯尼亚重度患者</p> -带着海绵宝宝和张起灵一起去盗墓的中二工科生</p>
-                        <ul>
-                                <li><a href="https://discord.com/channels/969157902155776011/969157902155776013">Discord</a></li>
-                                <li><a href="#">Instagram</a></li>
-                                <li><a href="https://twitter.com/CameronBeiber">Twitter</a></li>
-                        </ul>
+                        
                 </div>
                 <div class="work-display">
-                        <h2></h2>
+                        <h2>项目</h2>
                         <p>这里展示了我的最新作品，包括网页设计和移动</p>
                 </div>
-                <div class="interactive-section">
-                        <h2>🏳️‍🌈LGBT</h2>
-                        <p>-这里展示了有趣的le社群以及我参与过的lgbt活动</p>
-                        <img src="https://images.unsplash.com/photo-1561982479-c36896dad276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bGVzYmlhbiUyMGdpcmx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" alt="LGBT">
-                </div>
-        </div>
-</body>
+                <div 
+                                         <!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <title>LGBT 页面</title>
+    <style>
+      .interactive-section {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .interactive-section h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      .button {
+        background-color: #d3d3d3; /* 浅灰色 */
+        color: white; /* 白色字体 */
+        padding: 10px 20px; /* 设置内边距 */
+        text-decoration: none; /* 去除下划线 */
+        border-radius: 20px; /* 设置圆角 */
+        transition: background-color 0.3s ease; /* 设置过渡效果 */
+        display: inline-block; /* 将按钮设置为行内块元素 */
+        border: none; /* 去除边框 */
+      }
+
+      .button:hover {
+        background-color: #a9a9a9; /* 设置鼠标悬停时的背景色 */
+      }
+
+      .icon {
+        margin-left: 5px; /* 设置图标与文字之间的间距 */
+      }
+
+      .image-container {
+        position: relative;
+        width: 450px;
+        height: 587px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+.image-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 99%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .image-container img:first-child {
+        opacity: 1;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <div class="interactive-section">
+      <h2>🏳️‍🌈LGBT</h2>
+      <a href="https://weareher.com/" class="button">
+        进入LGBT页面
+        <span class="icon">👉</span>
+                          
+      </a>
+      <div class="image-container">
+           <img src="https://images.unsplash.com/photo-1596571368972-46c4cbfd5a2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fExHQlR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1000&q=60" alt="LGBT">                        
+      <img src="https://images.unsplash.com/photo-1561982479-c36896dad276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fExHQlR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" alt="LGBT"> 
+                                  
+                                  <img src="https://images.unsplash.com/photo-1564694457547-6ea79902e0be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8TEdCVHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="LGBT">
+        
+       
+      </div>
+    </div>
+    <script>
+      const images = document.querySelectorAll(".image-container img");
+      let currentIndex = 0;
+      let nextIndex = 1;
+      const intervalTime = 3000;
+
+      function changeImage() {
+        images[currentIndex].style.opacity = 0;
+        images[nextIndex].style.opacity = 1;
+        currentIndex = nextIndex;
+        nextIndex = (nextIndex + 1) % images.length;
+      }
+
+      images[0].style.opacity = 1;
+      setInterval(changeImage, intervalTime);
+    </script>
+  </body>
 </html>
