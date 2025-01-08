@@ -1,316 +1,440 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>我的网站</title>
-        <style>
-                /* 导航栏样式 */
-                nav {
-                        background-color: #000; /* 黑色 */
-                        color: #fff; /* 白色字体 */
-                        padding: 10px;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                }
+    <title>我的网站</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Noto+Serif+SC:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* 全局样式 */
+         body {
+            background-color: #f9f9f9; /* 浅灰色背景 */
+            color: #000; /* 黑色文字 */
+            font-family: 'Open Sans', sans-serif; /* 全局字体 */
+             margin: 0; /*  去除body的默认外边距 */
+        }
 
+       /* 头部容器 */
+        .header-container {
+           display: flex;
+           justify-content: space-between;/* 使头部元素左右分布 */
+           align-items: center; /* 使元素垂直居中 */
+           padding: 10px 20px; /* 增加左右内边距 */
+           border-bottom: 1px solid #ddd; /* 添加底部边框 */
+             margin-bottom: 20px; /*  和内容区域的距离 */
 
- 
-                nav img {
-                        height: 65px;
-                        width: auto;
-                }
+        }
+        /* 左上角搜索按钮 */
+        .search-button {
+             display: flex;
+           align-items: center;
+            justify-content: center;
+           width: 35px;
+             height: 35px;
+          background-color: #fff;
+           border: 1px solid #ddd;
+            border-radius: 5px;
+           cursor: pointer;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+         }
+           .search-button:hover {
+            background-color: #eee;
+          }
 
-                nav ul {
-                        list-style: none;
-                        margin: 0;
-                        padding: 0;
-                        display: flex;
-                }
+        /* 品牌标识 */
+       .brand-logo {
+             font-family: 'Bangers', cursive;
+            font-size: 50px;
+             font-weight: normal;
+            letter-spacing: 3px;
+             text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+             text-align: center;
+            margin-bottom: 0;
+        }
 
-                nav ul li {
-                        margin: 0 10px;
-                }
+       /* 右上角日期 */
+        .date-container {
+            display: flex;
+           align-items: center;
+             background-color: transparent;
+            padding: 5px 0;
+             margin-left: 10px;
+        }
+        .date-content {
+           display: flex;
+             align-items: baseline;
+            white-space: nowrap;
+       }
+           .date-number {
+                font-size: 26px;
+               font-weight: bold;
+              line-height: 1;
+              color: #000;
+            margin: 0 5px 0 0;
+          }
+       .date-day-year {
+             display: flex;
+          flex-direction: column;
+          margin-left: 5px;
+        }
 
-                nav ul li a {
-                        color: #fff;
-                        text-decoration: none;
-                        font-weight: bold;
-                        padding: 5px;
-                        border-radius: 5px;
-                }
-          
-           nav ul li a {
-                        /* 更改字体和字形 */
-                        font-family: "Georgia",oli;
-                        font-weight: 430;
-                        color: #fff;
-                        text-decoration: none;
-                        padding: 5px;
-                        border-radius: 5px;
-                }
+        .date-day {
+           font-size: 11px;
+            color: #aaa;
+           margin: 0;
+             line-height: 1;
+        }
+         .date-year {
+             font-size: 11px;
+             color: #aaa;
+            margin: 0;
+             line-height: 1;
+         }
+         .date-logo {
+            width: 20px;
+            height: 20px;
+           margin-right: 5px;
+             /* 调整图像对齐方式 */
+         }
+        .date-logo img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
 
+        /* 导航栏样式 */
+        nav {
+            display: flex;
+           justify-content: center;
+            background-color: #fff;
+           padding: 10px 0;
+             width: 100%;
+            margin-bottom: 10px;
+              border-top: 1px solid #000;
+             border-bottom: 1px solid #000;
+         }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+           display: flex;
+              flex-wrap: wrap;
+             justify-content: center;
+      }
 
-                nav ul li a.nsfw {
-                        color: red;
-                        font-weight: bold;
-                }
+        nav ul li {
+             margin: 0 8px;
+       }
+        nav ul li a {
+             font-family: 'Open Sans', sans-serif;/* 修改字体为 Open Sans */
+            font-weight: normal;/* 字体改为正常 */
+            color: #000;
+           font-size: 13px;
+          text-decoration: none;
+            padding: 5px;
+              border-radius: 0;
+           transition: color 0.3s;
+           letter-spacing: 1px; /* 调整字母间距 */
+        }
+       nav ul li a:hover {
+          color: #666; /* 悬停时深灰色 */
+      }
+        nav ul li a.nsfw {
+           color: red;
+          font-weight: bold;
+        }
 
-                /* 英雄区域样式 */
-                .hero {
-                        background-image: url('hero.jpg');
-                        background-size: cover;
-                        background-position: center;
-                        position: relative;
-                        height: 500px;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                }
+        /* 英雄区域样式 */
+        .hero {
+            background-image: url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            height: 500px;
+             display: flex;
+             flex-direction: column;
+            justify-content: center;
+           align-items: center;
+        }
+        .hero::before {
+            content: "";
+           background-color: transparent;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+       }
 
-                .hero::before {
-                        content: "";
-                        background-color: transparent; /* 将背景设置为透明 */
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        bottom: 0;
-                        left: 0;
-                }
+        .hero h1 {
+            font-family: 'Noto Serif SC', serif;
+            color: #fff;
+           font-size: 40px;
+           text-align: center;
+          margin-bottom: 15px;
+        }
+      .hero p {
+            color: #fff;
+          text-align: center;
+            font-size: 20px;
+           max-width: 600px;
+           line-height: 1.4;
+     }
 
-                .hero h1 {
-                        color: #fff;
-                        font-size: 48px;
-                        text-align: center;
-                        margin-bottom: 20px;
-                }
+         /* 整体布局容器 */
+       .content-container {
+            display: flex;
+           flex-wrap: wrap;
+            max-width: 1200px;
+             margin: 0 auto;
+             padding: 30px;
+           justify-content: space-between;
+            background-color: transparent;
+       }
 
-                .hero p {
-                        color: #fff;
-                        text-align: center;
-                        font-size: 24px;
-                        max-width: 600px;
-                        line-height: 1.5;
-                }
+       /* 内容区块基础样式 */
+       .content-block {
+            background-color: #fff;
+            padding: 15px;
+           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+           margin-bottom: 20px;
+      }
 
-                /* 个人主页样式 */
-                .container {
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: space-between;
-                        align-items: flex-start;
-                        max-width: 1200px;
-                        margin: 0 auto;
-                        padding: 50px;
-                        background-color: transparfent; /* 将背景设置为透明 */
-                }
+       /* 基本信息区域样式 */
+       .basic-information {
+            flex-basis: 30%;
+      }
+        .basic-information img {
+            display: block;
+           margin: 0 auto 15px;
+            border-radius: 50%;
+             width: 180px;
+            height: 180px;
+           object-fit: cover;
+       }
 
-                .work-display, .interactive-section, .basic-information {
-                        flex-basis: 30%;
-                        margin-bottom: 50px;
-                        background-color: #fff; /* 白色 */
-                        padding: 20px;
-                        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* 阴影 */
-                        border-radius: 5px;
-                }
+        .basic-information h1 {
+             font-family: 'Noto Serif SC', serif;
+            font-size: 28px;
+           text-align: center;
+            margin-bottom: 8px;
+       }
 
-                .basic-information img {
-                        display: block;
-                        margin: 0 auto 20px;
-                        border-radius: 50%;
-                        width: 200px;
-                        height: 200px;
-                        object-fit: cover;
-                }
+      .basic-information h2 {
+           font-family: 'Noto Serif SC', serif;
+           font-size: 18px;
+          margin-bottom: 8px;
+           color: #000;
+       }
 
-                .basic-information h1 {
-                        font-size: 36px;
-                        text-align: center;
-                        margin-bottom: 10px;
-                }
+        .basic-information p {
+           font-size: 14px;
+          line-height: 1.3;
+           margin-bottom: 15px;
+      }
 
-                .basic-information h2 {
-                        font-size: 24px;
-                        margin-bottom: 10px;
-                }
+       .basic-information ul {
+            list-style: none;
+             margin: 0;
+            padding: 0;
+            display: flex;
+           flex-wrap: wrap;
+           justify-content: center;
+      }
+        .basic-information li {
+             margin: 0 8px;
+       }
+        /* 项目展示区域样式 */
+        .work-display {
+           flex-basis: 68%;
+           min-width: 50%;
+      }
+       .work-display h2 {
+            font-family: 'Noto Serif SC', serif;
+             font-size: 18px;
+            margin-bottom: 8px;
+           color: #000;
+      }
+      .work-display p {
+            font-size: 14px;
+             line-height: 1.3;
+             margin-bottom: 15px;
+     }
 
-                .basic-information p {
-                        font-size: 18px;
-                        line-height: 1.5;
-                        margin-bottom: 20px;
-                }
-
-                .basic-information ul {
-                        list-style: none;
-                        margin: 0;
-                        padding: 0;
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: center;
-                }
-
-                .basic-information li {
-                        margin: 0 10px;
-                }
-
-                .interactive-section img {
-                        display: block;
-                        margin: 0 auto;
-                        max-width: 100%;
-                }
-
-                .interactive-section h2 {
-                        font-size: 24px;
-                        margin-bottom: 10px;
-                }
-
-                .interactive-section p {
-                        font-size: 18px;
-                        line-height: 1.5;
-                        margin-bottom: 20px;
-                }
-
-                .work-display h2 {
-                        font-size: 24px;
-                        margin-bottom: 10px;
-                }
-
-                .work-display p {
-                        font-size: 18px;
-                        line-height: 1.5;
-                        margin-bottom: 20px;
-                }
-        </style>
+      /* 互动区域样式 */
+       .interactive-section {
+          flex-basis: 100%;
+            text-align: center;
+            margin-top: 0;
+      }
+        .interactive-section h2 {
+              font-family: 'Noto Serif SC', serif;
+            font-size: 18px;
+           margin-bottom: 8px;
+            color: #000;
+      }
+       .interactive-section p {
+            font-size: 14px;
+           line-height: 1.3;
+             margin-bottom: 15px;
+      }
+        .interactive-section img {
+          display: block;
+             margin: 0 auto;
+          max-width: 100%;
+      }
+        .button {
+            background-color: #eee;
+             color: #000;
+            font-size: 13px;
+        }
+         .button:hover {
+           background-color: #ddd;
+      }
+    </style>
 </head>
 <body>
-        <nav>
-  <img src="https://media2.giphy.com/media/gOih92mhiKQvF8Bqly/200.webp?cid=ecf05e47tqsdwjae0yk2wjd9vh4csh2g3kw01jm8e3hvuxn8&ep=v1_gifs_search&rid=200.webp&ct=g" alt="logo">
-  <ul>
-    <li><a href="https://popeyemagazine.jp/en/">🏂冒险</a></li>
-    <li><a href="https://book.douban.com/">📚读书会</a></li>
-    <li><a href="https://timwendelboe.no/">☕咖啡馆</a></li>
-    <li><a href="https://zh.wikipedia.org/wiki/NSFW" class="nsfw">NSFW</a></li>
-    
-  
-    <li><select onchange="window.location.href=this.value;">
-      <option value="#">📬Ask Me Anything</option>
-      <option value="https://www.douban.com/">DouBan</option>
-      <option value="https://www.youtube.com/">YouTube</option>
-      <option value="https://www.facebook.com/">Facebook</option>
-  
-    </select></li>
-  </ul>
-</nav>
-      
-    
-          
-          
+    <div class="header-container">
+        <div class="search-button">
+           <i class="fas fa-search"></i>
+       </div>
+       <div class="brand-logo">Suzie</div>
+          <div class="date-container">
+            <div class="date-logo">
+            <img  src="https://i.imgur.com/vX72bY4.png" alt="脑部图案">  <!-- 替换为你的脑部图案链接 -->
+            </div>
+               <div class="date-content">
+                 <p class="date-number">1.9</p>
+                    <div class="date-day-year">
+                       <p class="date-day">THU</p>
+                      <p class="date-year">2025</p>
+                  </div>
+               </div>
         </div>
-        <div class="container">
-                <div class="basic-information">
-                        <img src="https://media0.giphy.com/media/xT8qB7GQDfnldWTFhS/200w.webp?cid=ecf05e47yltvhybbc6ifml5jfeq4uf060hquwiq5ffyv2vln&ep=v1_gifs_search&rid=200w.webp&ct=g=alt="头像">
-                        <h1>Suzie</h1>
-                        <h2>新领域的探险家</h2>
-                        <p>-英美剧漫游者</p>
-                  -肯尼亚重度患者</p> -带着海绵宝宝和张起灵一起去盗墓的中二工科生</p>
-                        
-                </div>
-                <div class="work-display">
-                        <h2>项目</h2>
-                        <p>这里展示了我的最新作品，包括网页设计和移动</p>
-                </div>
-                <div 
-                                         <!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8">
-    <title>LGBT 页面</title>
-    <style>
-      .interactive-section {
-        text-align: center;
-        margin-top: 50px;
-      }
-
-      .interactive-section h2 {
-        font-size: 36px;
-        margin-bottom: 20px;
-      }
-
-      .button {
-        background-color: #d3d3d3; /* 浅灰色 */
-        color: white; /* 白色字体 */
-        padding: 10px 20px; /* 设置内边距 */
-        text-decoration: none; /* 去除下划线 */
-        border-radius: 20px; /* 设置圆角 */
-        transition: background-color 0.3s ease; /* 设置过渡效果 */
-        display: inline-block; /* 将按钮设置为行内块元素 */
-        border: none; /* 去除边框 */
-      }
-
-      .button:hover {
-        background-color: #a9a9a9; /* 设置鼠标悬停时的背景色 */
-      }
-
-      .icon {
-        margin-left: 5px; /* 设置图标与文字之间的间距 */
-      }
-
-      .image-container {
-        position: relative;
-        width: 450px;
-        height: 587px;
-        margin: 0 auto;
-        overflow: hidden;
-      }
-
-.image-container img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 99%;
-        height: 100%;
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-      }
-
-      .image-container img:first-child {
-        opacity: 1;
-      }
-     
-    </style>
-  </head>
-  <body>
-    <div class="interactive-section">
-      <h2>🏳️‍🌈LGBT</h2>
-      <a href="https://weareher.com/" class="button">
-        进入LGBT页面
-        <span class="icon">👉</span>
-                          
-      </a>
-      <div class="image-container">
-           <img src="https://images.unsplash.com/photo-1596571368972-46c4cbfd5a2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fExHQlR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1000&q=60" alt="LGBT">                        
-      <img src="https://images.unsplash.com/photo-1561982479-c36896dad276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fExHQlR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" alt="LGBT"> 
-                                  
-                                  <img src="https://images.unsplash.com/photo-1564694457547-6ea79902e0be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8TEdCVHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="LGBT">
-        
-       
       </div>
-    </div>
-    <script>
-      const images = document.querySelectorAll(".image-container img");
-      let currentIndex = 0;
-      let nextIndex = 1;
-      const intervalTime = 3000;
+  <nav>
+        <ul>
+           <li><a href="https://popeyemagazine.jp/en/">EAT</a></li>
+            <li><a href="https://book.douban.com/">DRINK</a></li>
+           <li><a href="https://timwendelboe.no/">WATCH</a></li>
+            <li><a href="https://zh.wikipedia.org/wiki/NSFW" class="nsfw">LISTEN</a></li>
+              <li><a href="https://zh.wikipedia.org/wiki/NSFW" class="nsfw">READ</a></li>
+              <li><a href="https://zh.wikipedia.org/wiki/NSFW" class="nsfw">LIVE</a></li>
+            <li><a href="https://zh.wikipedia.org/wiki/NSFW" class="nsfw">WEAR</a></li>
+             <li><a href="https://zh.wikipedia.org/wiki/NSFW" class="nsfw">DRIVE</a></li>
+             <li><a href="https://zh.wikipedia.org/wiki/NSFW" class="nsfw">THINK</a></li>
+              <li><a href="https://zh.wikipedia.org/wiki/NSFW" class="nsfw">VISIT</a></li>
+               <li><select onchange="window.location.href=this.value;">
+                <option value="#">MORE</option>
+                <option value="https://www.douban.com/">DouBan</option>
+                <option value="https://www.youtube.com/">YouTube</option>
+                <option value="https://www.facebook.com/">Facebook</option>
+           </select></li>
+        </ul>
+    </nav>
 
-      function changeImage() {
-        images[currentIndex].style.opacity = 0;
-        images[nextIndex].style.opacity = 1;
-        currentIndex = nextIndex;
-        nextIndex = (nextIndex + 1) % images.length;
-      }
-
-      images[0].style.opacity = 1;
-      setInterval(changeImage, intervalTime);
-    </script>
-  </body>
-                                                                     </html>
+ <div class="content-container">
+        <div class="basic-information content-block">
+            <img src="https://media0.giphy.com/media/xT8qB7GQDfnldWTFhS/200w.webp?cid=ecf05e47yltvhybbc6ifml5jfeq4uf060hquwiq5ffyv2vln&ep=v1_gifs_search&rid=200w.webp&ct=g=alt=" alt="头像">
+             <h1>Suzie</h1>
+           <h2>新领域的探险家</h2>
+           <p>-英美剧漫游者</p>
+           <p>-肯尼亚重度患者</p>
+           <p>-带着海绵宝宝和张起灵一起去盗墓的中二工科生</p>
+        </div>
+      <div class="work-display content-block">
+            <h2>项目</h2>
+           <p>这里展示了我的最新作品，包括网页设计和移动</p>
+        </div>
+      <div class="interactive-section content-block">
+             <!DOCTYPE html>
+              <html lang="zh-CN">
+                <head>
+                    <meta charset="UTF-8">
+                   <title>LGBT 页面</title>
+                   <style>
+                         .interactive-section {
+                             text-align: center;
+                            margin-top: 0;
+                       }
+                      .interactive-section h2 {
+                        font-family: 'Noto Serif SC', serif;
+                         font-size: 18px;
+                            margin-bottom: 8px;
+                           color: #000;
+                        }
+                        .button {
+                           background-color: #eee;
+                            color: #000;
+                           padding: 10px 20px;
+                           text-decoration: none;
+                           border-radius: 5px;
+                          transition: background-color 0.3s ease;
+                            display: inline-block;
+                           border: 1px solid #ddd;
+                            font-size: 13px;
+                      }
+                      .button:hover {
+                             background-color: #ddd;
+                       }
+                    .icon {
+                         margin-left: 5px;
+                      }
+                        .image-container {
+                            position: relative;
+                           width: 450px;
+                            height: 587px;
+                           margin: 0 auto;
+                         overflow: hidden;
+                        }
+                         .image-container img {
+                            position: absolute;
+                             top: 0;
+                             left: 0;
+                           width: 99%;
+                             height: 100%;
+                            opacity: 0;
+                            transition: opacity 0.5s ease-in-out;
+                     }
+                   .image-container img:first-child {
+                           opacity: 1;
+                    }
+              </style>
+             </head>
+              <body>
+                <div class="interactive-section">
+                   <h2>🏳️‍🌈LGBT</h2>
+                        <a href="https://weareher.com/" class="button">
+                            进入LGBT页面
+                            <span class="icon">👉</span>
+                       </a>
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1596571368972-46c4cbfd5a2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fExHQlR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1000&q=60" alt="LGBT">
+                             <img src="https://images.unsplash.com/photo-1561982479-c36896dad276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fExHQlR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" alt="LGBT">
+                            <img src="https://images.unsplash.com/photo-1564694457547-6ea79902e0be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8TEdCVHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="LGBT">
+                        </div>
+                  </div>
+                 <script>
+                      const images = document.querySelectorAll(".image-container img");
+                      let currentIndex = 0;
+                      let nextIndex = 1;
+                       const intervalTime = 3000;
+                     function changeImage() {
+                           images[currentIndex].style.opacity = 0;
+                          images[nextIndex].style.opacity = 1;
+                            currentIndex = nextIndex;
+                          nextIndex = (nextIndex + 1) % images.length;
+                     }
+                   images[0].style.opacity = 1;
+                     setInterval(changeImage, intervalTime);
+                </script>
+            </body>
+       </html>
+      </div>
+  </div>
+</body>
+</html>
